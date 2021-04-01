@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingClass">
+
+   <Button
+       android:id="@+id/button_send"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginBottom="16dp"
+       android:layout_marginRight="16dp"
+       android:text="Send"
+       android:onClick="launchSecondActivity"
+       style="@style/Widget.MaterialComponents.Button.TextButton"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintWidth_percent=".2"/>
+
+   <com.google.android.material.textfield.TextInputLayout
+       android:id="@+id/editText_main"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginBottom="16dp"
+      android:layout_marginLeft="8dp"
+      android:layout_marginRight="8dp"
+       app:layout_constraintWidth_percent=".7"
+       android:padding="5dp"
+
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/button_send">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:hint="Enter Yor Message Here"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          />
+
+   </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
