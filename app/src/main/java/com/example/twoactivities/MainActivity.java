@@ -9,6 +9,7 @@ import android.widget.EditText;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
 
@@ -31,15 +32,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mMessageEditText = (TextInputLayout)findViewById(R.id.editText_main);
-        mReplyHeadTextView = (MaterialTextView)findViewById(R.id.text_header_reply);
-        mReplyTextView = (MaterialTextView)findViewById(R.id.text_message_reply);
+       mMessageEditText = (TextInputLayout)findViewById(R.id.editText_main);
+        mReplyHeadTextView = findViewById(R.id.text_header_reply);
+        mReplyTextView = findViewById(R.id.text_message_reply);
     }
 
     public void launchSecondActivity(View view){
         Log.d(LOG_TAG, "Button clicked");
         Intent intent = new Intent(this, SecondActivity.class);
-        String message = mMessageEditText.getEditText().toString();
+        String message = mMessageEditText.getEditText().getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
         startActivityForResult(intent, TEXT_REQUEST);

@@ -11,8 +11,7 @@ import android.widget.TextView;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class SecondActivity extends AppCompatActivity {
-    public static final String EXTRA_REPLY =
-            "com.example.android.twoactivities.extra.REPLY";
+    public static final String EXTRA_REPLY = "com.example.android.twoactivities.extra.REPLY";
     private TextInputLayout mReply;
 
     @Override
@@ -21,13 +20,14 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         Intent intent = getIntent();
+        mReply = findViewById(R.id.editText_second);
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         TextView textView = findViewById(R.id.text_message);
         textView.setText(message);
     }
 
     public void returnReply(View view) {
-        String reply = mReply.getEditText().toString();
+        String reply = mReply.getEditText().getText().toString();
         Intent replyIntent = new Intent();
         replyIntent.putExtra(EXTRA_REPLY, reply);
         setResult(RESULT_OK, replyIntent);
